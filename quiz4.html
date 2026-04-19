@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rack em up!</title>
+    <link rel="stylesheet" href="formatting.css">
+</head>
+<body>
+    <div id="score-board">Score: <span id="score">0</span></div>
+
+    <h1>final question</h1>
+    <p>What are the odds?</p>
+    <p>If you entered a button randomly on this quiz,
+       what is the chance you get a 100% 
+    </p>
+    <div class="answer-container">
+        <button class="btn btn-red" onclick="handleChoice(false, 'results.html')">216</button>
+        <button class="btn btn-blue" onclick="handleChoice(true, 'results.html')">256</button>
+        <button class="btn btn-green" onclick="handleChoice(false, 'results.html')">232</button>
+        <button class="btn btn-orange" onclick="handleChoice(false, 'results.html')">258</button>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>

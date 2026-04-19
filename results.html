@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rack em up! - Results</title>
+    <link rel="stylesheet" href="formatting.css">
+    <style>
+        .results-container {
+            margin-top: 50px;
+        }
+        #final-score {
+            font-size: 3rem;
+            display: block;
+            margin: 20px 0;
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1>Quiz Complete!</h1>
+        <p>Your total score is:</p>
+        <span id="final-score">0</span>
+        
+        <p>Would you like to try again?</p>
+        
+        <div class="answer-container">
+            <button class="btn btn-green" onclick="restartQuiz()">Yes</button>
+            
+            <button class="btn btn-red" onclick="exitQuiz()">No</button>
+        </div>
+    </div>
+
+    <script>
+        const finalScore = localStorage.getItem("quizScore") || 0;
+        document.getElementById("final-score").innerText = finalScore;
+
+        function restartQuiz() {
+            localStorage.setItem("quizScore", 0);
+            window.location.href = 'quiz.html';
+        }
+
+        function exitQuiz() { 
+            if(confirm("Are you sure you want to exit?")) {
+                window.close();
+                document.body.innerHTML = "<h1>Thank you for playing!</h1><p>You can now close this tab.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

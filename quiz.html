@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rack em up!</title>
+    <link rel="stylesheet" href="formatting.css">
+</head>
+<body>
+    <div id="score-board">Score: <span id="score">0</span></div>
+
+    <h1>Question 1</h1>
+    <p>A simple math question for you!</p>
+    <p>What is 16x16?</p>
+    <div class="answer-container">
+        <button class="btn btn-red" onclick="handleChoice(false, 'quiz2.html')">216</button>
+        <button class="btn btn-blue" onclick="handleChoice(true, 'quiz2.html')">256</button>
+        <button class="btn btn-green" onclick="handleChoice(false, 'quiz2.html')">232</button>
+        <button class="btn btn-orange" onclick="handleChoice(false, 'quiz2.html')">258</button>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>
