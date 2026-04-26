@@ -49,22 +49,3 @@ body{
 
 .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-.cookie-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #333;
-    padding: 20px;
-    border-top: 3px solid darkblue;
-    z-index: 1000;
-}
-
-.cookie-container button {
-    margin: 5px;
-    padding: 8px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-}
