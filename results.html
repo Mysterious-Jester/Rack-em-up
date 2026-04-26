@@ -14,11 +14,25 @@
             margin: 20px 0;
             color: #2ecc71;
         }
+
+        #trophy-display {
+            margin: 30px 0;
+        }
+        #trophy-image {
+            max-width: 200px; /* Adjust size as needed */
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+        }
     </style>
 </head>
 <body>
     <div class="results-container">
         <h1>Quiz Complete!</h1>
+
+        <div id="trophy-display">
+            <img id="trophy-image" src="" alt="trophy" style="display: none;">
+        </div>
+
         <p>Your total score is:</p>
         <span id="final-score">0</span>
         
@@ -26,14 +40,36 @@
         
         <div class="answer-container">
             <button class="btn btn-green" onclick="restartQuiz()">Yes</button>
-            
             <button class="btn btn-red" onclick="exitQuiz()">No</button>
         </div>
     </div>
 
     <script>
-        const finalScore = localStorage.getItem("quizScore") || 0;
+        const finalScore = parseInt(localStorage.getItem("quizScore")) || 0;
         document.getElementById("final-score").innerText = finalScore;
+
+        function displayTrophy() {
+            const questionsCorrect = finalScore / 100;
+            const trophyImg = document.getElementById("trophy-image");
+            
+            let trophyPath = "";
+
+            if (questionsCorrect >= 4) {
+                trophyPath = "gold_trophy.jpeg";
+            } else if (questionsCorrect >= 2) {
+                trophyPath = "silver_trophy.jpeg";
+            } else {
+                trophyPath = "bronze_trophy.jpeg";
+            }
+
+            if (trophyPath) {
+                trophyImg.src = trophyPath;
+                trophyImg.style.display = "inline-block";
+            }
+        }
+
+        displayTrophy();
+
 
         function restartQuiz() {
             localStorage.setItem("quizScore", 0);
