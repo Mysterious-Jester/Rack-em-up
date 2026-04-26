@@ -49,3 +49,9 @@ body{
 
 .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
+.quiz-image {
+    max-width: 300px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
