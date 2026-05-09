@@ -17,7 +17,7 @@ function handleChoice(isCorrect, nextUrl) {
 
 
 function giveUp() {
-    if (confirm("Are you sure you want to give up? your current score will be saved.")) {
+    if (confirm("Are you sure you want to give up?")) {
         window.location.href = 'results.html';
     }
 }
