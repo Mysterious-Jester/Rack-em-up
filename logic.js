@@ -14,3 +14,10 @@ function handleChoice(isCorrect, nextUrl) {
     
     window.location.href = nextUrl;
 }
+
+
+function giveUp() {
+    if (confirm("Are you sure you want to give up? your current score will be saved.")) {
+        window.location.href = 'results.html';
+    }
+}
